@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gantt Chart - SJF Scheduling</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 30px;
+    }
+    .gantt-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      margin: 0 auto;
+      width: 80%;
+      border-top: 2px solid #000;
+      border-bottom: 2px solid #000;
+      padding-top: 20px;
+    }
+    .gantt-bar {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 14px;
+      color: white;
+      margin-right: 2px;
+      border-radius: 5px;
+    }
+    .P1 { background-color: #ff6347; width: 60px; }
+    .P4 { background-color: #98fb98; width: 40px; }
+    .P3 { background-color: #1e90ff; width: 30px; }
+    .P5 { background-color: #ff1493; width: 50px; }
+    .P6 { background-color: #ffff00; width: 60px; }
+    .P2 { background-color: #32cd32; width: 70px; }
+  </style>
+</head>
+<body>
+
+  <h2>Gantt Chart for SJF Scheduling</h2>
+
+  <div class="gantt-container">
+    <div class="gantt-bar P1">P1 (0-4)</div>
+    <div class="gantt-bar P4">P4 (4-6)</div>
+    <div class="gantt-bar P3">P3 (6-9)</div>
+    <div class="gantt-bar P5">P5 (9-14)</div>
+    <div class="gantt-bar P6">P6 (14-20)</div>
+    <div class="gantt-bar P2">P2 (20-27)</div>
+  </div>
+
+</body>
+</html>
