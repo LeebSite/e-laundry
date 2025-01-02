@@ -42,7 +42,7 @@ if (isset($_POST['login'])) {
 ?>
 
 <!DOCTYPE html>
-<html>
+<html>  
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -102,7 +102,7 @@ if (isset($_POST['login'])) {
 
                             <div class="form-group text-center row m-t-20">
                                 <div class="col-12">
-                                    <a href="../page/user/register.php" class="btn btn-success btn-block waves-effect waves-light">Registrasi</a>
+                                    <a href="register.php" class="btn btn-success btn-block waves-effect waves-light">Registrasi</a>
                                 </div>
                             </div>
                              

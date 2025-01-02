@@ -3,7 +3,7 @@
 $dbHost = "localhost";
 $dbUsername = "root";
 $dbPass = "";
-$dbName = "db_laundry";
+$dbName = "laundry_db";
 
 $conn = mysqli_connect($dbHost, $dbUsername, $dbPass, $dbName);
 

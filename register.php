@@ -15,6 +15,10 @@ if (isset($_POST['register'])) {
     $username = htmlentities(strip_tags(trim($_POST["username"])));
     $password = htmlentities(strip_tags(trim($_POST["password"])));
     $confirm_password = htmlentities(strip_tags(trim($_POST["confirm_password"])));
+    $nama = htmlentities(strip_tags(trim($_POST["nama"])));
+    $jk = htmlentities(strip_tags(trim($_POST["jk"])));
+    $alamat = htmlentities(strip_tags(trim($_POST["alamat"])));
+    $usertelp = htmlentities(strip_tags(trim($_POST["usertelp"])));
 
     // validasi input
     if ($password !== $confirm_password) {
@@ -29,7 +33,7 @@ if (isset($_POST['register'])) {
             $hashed_password = password_hash($password, PASSWORD_DEFAULT);
 
             // insert data ke database
-            $query = "INSERT INTO tb_users (username, userpass, level) VALUES ('$username', '$hashed_password', 'user')";
+            $query = "INSERT INTO tb_users (username, userpass, nama, jk, alamat, usertelp, level) VALUES ('$username', '$hashed_password', '$nama', '$jk', '$alamat', '$usertelp', 'kasir')";
 
             if (mysqli_query($conn, $query)) {
                 $pesan_sukses = "Registrasi berhasil! Silakan login.";
@@ -90,7 +94,7 @@ if (isset($_POST['register'])) {
                         <form class="form-horizontal m-t-20" action="" method="POST">
                             <div class="form-group row">
                                 <div class="col-12">
-                                    <input class="form-control" type="text" required placeholder="Username" name="username">
+                                    <input class="form-control" type="text" required placeholder="Username" name=" username">
                                 </div>
                             </div>
 
@@ -106,6 +110,34 @@ if (isset($_POST['register'])) {
                                 </div>
                             </div>
 
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <input class="form-control" type="text" required placeholder="Nama" name="nama">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <select class="form-control" name="jk" required>
+                                        <option value="">Pilih Jenis Kelamin</option>
+                                        <option value="Laki - laki">Laki - laki</option>
+                                        <option value="Perempuan">Perempuan</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <input class="form-control" type="text" required placeholder="Alamat" name="alamat">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <div class="col-12">
+                                    <input class="form-control" type="text" required placeholder="No Telepon" name="usertelp">
+                                </div>
+                            </div>
+
                             <div class="form-group text-center row m-t-20">
                                 <div class="col-12">
                                     <button class="btn btn-success btn-block waves-effect waves-light" type="submit" name="register">Registrasi</button>
@@ -114,7 +146,7 @@ if (isset($_POST['register'])) {
 
                             <div class="form-group text-center row m-t-20">
                                 <div class="col-12">
-                                    <a href="../page/user/login.php" class="btn btn-danger btn-block waves-effect waves-light">Kembali ke Login</a>
+                                    <a href="login.php" class="btn btn-danger btn-block waves-effect waves-light">Kembali ke Login</a>
                                 </div>
                             </div>
                         </form>
